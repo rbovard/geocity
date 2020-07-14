@@ -485,6 +485,7 @@
     geometryWidget.prototype.disableDrawing = function() {
         if (this.interactions.draw) {
             this.interactions.draw.setActive(false);
+            this.interactions.select.setActive(false);
         }
     };
 

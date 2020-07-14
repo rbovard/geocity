@@ -20,14 +20,22 @@
 <div id="{{ id }}_div_map">
   {% if edit_geom %}
     <div id="mapButtons">
-      <a class="btn btn-outline-warning" title="Cliquer dans la carte pour ajouter des dessins"
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="active btn btn-outline-warning">
+        <input onfocus="geometryWidget.enableDrawing();" type="radio" name="options" autocomplete="off" checked> Active
+      </label>
+      <label class="btn btn-outline-warning">
+        <input onfocus="alert('toto);'" type="radio" name="options" autocomplete="off"> Radio
+      </label>
+    </div>
+      {% comment %} <a class="btn btn-outline-warning" title="Cliquer dans la carte pour ajouter des dessins"
          href="javascript:geometryWidget.enableDrawing();" role="button">
          <i class="fa fa-pencil"></i> Dessiner
       </a>
       <a class="btn btn-outline-warning" title="Maintenir la touche Maj (Shift) enfoncée pour en sélectionner plusieurs"
          href="javascript:geometryWidget.selectFeatures();" role="button">
          <i class="fa fa-mouse-pointer"></i> Sélectionner et Modifier
-      </a>
+      </a> {% endcomment %}
       <a id="delete-selected" class="btn btn-outline-danger""
          href="javascript:geometryWidget.removeSelectedFeatures();" role="button">
          <i class="fa fa-trash"></i>  Effacer la ou les entité(s) sélectionnée(s)
