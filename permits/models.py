@@ -399,6 +399,10 @@ class PermitRequest(models.Model):
         _("date de création"),
         default=timezone.now
     )
+    send_at = models.DateTimeField(
+        _("date d'envoi"),
+        default=timezone.now
+    )
     validated_at = models.DateTimeField(
         _("date de validation"),
         null=True
